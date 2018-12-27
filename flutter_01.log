@@ -1,0 +1,111 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter packages get
+
+## exception
+
+_AssertionError: 'package:flutter_tools/src/base/logger.dart': Failed assertion: line 466 pos 12: 'timer.isActive': is not true.
+
+```
+#0      _AssertionError._doThrowNew (dart:core/runtime/liberrors_patch.dart:40:39)
+#1      _AssertionError._throwNew (dart:core/runtime/liberrors_patch.dart:36:5)
+#2      AnsiSpinner.cancel (package:flutter_tools/src/base/logger.dart:466:12)
+#3      AnsiStatus.cancel (package:flutter_tools/src/base/logger.dart:516:11)
+#4      pubGet (package:flutter_tools/src/dart/pub.dart:114:14)
+<asynchronous suspension>
+#5      PackagesGetCommand._runPubGet (package:flutter_tools/src/commands/packages.dart:59:11)
+<asynchronous suspension>
+#6      PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:82:11)
+<asynchronous suspension>
+#7      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:383:18)
+<asynchronous suspension>
+#8      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:317:33)
+<asynchronous suspension>
+#9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#10     _rootRun (dart:async/zone.dart:1124:13)
+#11     _CustomZone.run (dart:async/zone.dart:1021:19)
+#12     _runZoned (dart:async/zone.dart:1516:10)
+#13     runZoned (dart:async/zone.dart:1463:12)
+#14     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#15     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:308:20)
+#16     CommandRunner.runCommand (package:args/command_runner.dart:194:27)
+<asynchronous suspension>
+#17     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:393:21)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#19     _rootRun (dart:async/zone.dart:1124:13)
+#20     _CustomZone.run (dart:async/zone.dart:1021:19)
+#21     _runZoned (dart:async/zone.dart:1516:10)
+#22     runZoned (dart:async/zone.dart:1463:12)
+#23     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#24     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:353:19)
+<asynchronous suspension>
+#25     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109:29)
+#26     new Future.sync (dart:async/future.dart:224:31)
+#27     CommandRunner.run (package:args/command_runner.dart:109:11)
+#28     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:235:18)
+#29     run.<anonymous closure> (package:flutter_tools/runner.dart:59:20)
+<asynchronous suspension>
+#30     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#31     _rootRun (dart:async/zone.dart:1124:13)
+#32     _CustomZone.run (dart:async/zone.dart:1021:19)
+#33     _runZoned (dart:async/zone.dart:1516:10)
+#34     runZoned (dart:async/zone.dart:1463:12)
+#35     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#36     runInContext (package:flutter_tools/src/context_runner.dart:42:24)
+<asynchronous suspension>
+#37     run (package:flutter_tools/runner.dart:50:10)
+#38     main (package:flutter_tools/executable.dart:52:9)
+<asynchronous suspension>
+#39     main (file:///Users/jenkins/Library/flutter/packages/flutter_tools/bin/flutter_tools.dart:8:3)
+#40     _startIsolate.<anonymous closure> (dart:isolate/runtime/libisolate_patch.dart:287:32)
+#41     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:171:12)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel dev, v0.10.1, on Mac OS X 10.12.6 16G1036, locale en-US)
+    [32m•[39m Flutter version 0.10.1 at /Users/jenkins/Library/flutter
+    [32m•[39m Framework revision 6a3ff018b1 (2 weeks ago), 2018-10-18 18:38:26 -0400
+    [32m•[39m Engine revision 3860a43379
+    [32m•[39m Dart version 2.1.0-dev.7.1.flutter-b99bcfd309
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    [32m•[39m Android SDK at /Users/jenkins/Library/Android/sdk
+    [32m•[39m Android NDK at /Users/jenkins/Library/Android/sdk/ndk-bundle
+    [32m•[39m Platform android-28, build-tools 27.0.3
+    [32m•[39m ANDROID_HOME = /Users/jenkins/Library/Android/sdk
+    [32m•[39m Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+    [32m•[39m All Android licenses accepted.
+
+[32m[✓][39m iOS toolchain - develop for iOS devices (Xcode 9.0.1)
+    [32m•[39m Xcode at /Applications/Xcode.app/Contents/Developer
+    [32m•[39m Xcode 9.0.1, Build version 9A1004
+    [32m•[39m ios-deploy 2.0.0
+    [32m•[39m CocoaPods version 1.5.3
+
+[32m[✓][39m Android Studio (version 3.2)
+    [32m•[39m Android Studio at /Applications/Android Studio.app/Contents
+    [32m•[39m Flutter plugin version 30.0.1
+    [32m•[39m Dart plugin version 181.5656
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+
+[32m[✓][39m VS Code (version 1.28.2)
+    [32m•[39m VS Code at /Applications/Visual Studio Code.app/Contents
+    [32m•[39m Flutter extension version 2.19.0
+
+[33m[!][39m Connected device
+    [33m![39m No devices available
+
+[33m![39m Doctor found issues in 1 category.
+```
